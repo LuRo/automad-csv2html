@@ -9,7 +9,7 @@
  * 	@license MIT license
  */
 
- namespace Automad;
+ namespace Iseek\Csv2Html;
 
  defined('AUTOMAD') or die('Direct access not permitted!');
  
@@ -19,20 +19,22 @@
     /**
 	 *  The main function.
 	 *
-	 * 	@param string $text
-     *  @param boolean $hasHeader
+	 * 	@param array $options
 	 * 	@param object $Automad
 	 * 	@return string the output of the extension
 	 */
 	
-	public function Csv2Html($text, $hasHeader, $Automad) {
+	public function Csv2Html($options, $Automad) {
 
         $str_line_separator = "#";
         $str_cell_separator = ";";
 
      
         $row = 1;
-        if (strlen($text) > 0) {
+        if (strlen($options['rawText']) > 0) {
+
+            $hasHeader = $options['hasHeader'];
+            $text = $options['rawText'];
 
             $table_rows = explode($str_line_separator, $text);
             $htmlval = "<table class='table'>";
