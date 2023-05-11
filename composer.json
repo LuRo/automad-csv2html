@@ -1,0 +1,13 @@
+{
+    "name": "iseek/csv2html",
+    "description": "The CSV code is converted into bootstrap html code",
+    "type": "automad-package",
+    "keywords": ["extension"],
+    "license": "MIT",
+    "require": {
+      "automad/package-installer": "^1.1"
+    },
+    "autoload": {
+        "classmap": [""]
+    }
+}
