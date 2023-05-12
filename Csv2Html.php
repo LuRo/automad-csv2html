@@ -75,5 +75,7 @@
             }
             $htmlval = $htmlval."</table>";
         }
+
+        return $htmlval;
     }
 }
