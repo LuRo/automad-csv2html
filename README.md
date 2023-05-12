@@ -8,6 +8,8 @@ This extension extends automad to generate tables from simple csv file strings.
 |----|---|---|
 | rawText | submit csv (separator is semicolumn) formated raw text | use '#' as line break |
 | hasHeader | first row shall be formated as header row | true\|false |
+| cssTableClass | none or multiple css classes. the generic 'table' class must not be set, it is added automatically | string |
+| cssTheadClass | none or multiple css classes. | string |
 
 ## Usage
 
