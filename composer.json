@@ -1,5 +1,5 @@
 {
-    "name": "iseek/automad-csv2html",
+    "name": "luro/automad-csv2html",
     "description": "The CSV code is converted into bootstrap html code",
     "version": "1.0.0",
     "type": "automad-package",
