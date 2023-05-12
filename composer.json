@@ -1,7 +1,7 @@
 {
     "name": "luro/automad-csv2html",
     "description": "The CSV code is converted into bootstrap html code",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "type": "automad-package",
     "authors": [ 
       {
