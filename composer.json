@@ -2,6 +2,13 @@
     "name": "iseek/csv2html",
     "description": "The CSV code is converted into bootstrap html code",
     "type": "automad-package",
+    "authors": [ 
+      {
+      "name": "Lukas Rothe",
+      "homepage": "https://www.iseek.ch",
+      "role": "Developer"
+      }
+    ],
     "keywords": ["extension"],
     "license": "MIT",
     "require": {
