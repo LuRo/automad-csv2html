@@ -37,15 +37,29 @@
 
             $hasHeader = $options['hasHeader'];
             $text = $options['rawText'];
+            
+            $cssTheadClass = $options["cssTheadClass"];
+            if ($cssTheadClass != "") {$cssTheadClass = " class=".$cssTheadClass."' ";};
+            
+            $cssTableClass = $options["cssTableClass"];
+            if ($cssTableClass != "") {
+                $cssTableClass = " class='table ".$cssTableClass."' ";
+            } else {
+                $cssTableClass = " class='table' ";
+            };
 
             $table_rows = explode($str_line_separator, $text);
 
-            $htmlval = "<table class='table'>";
+            $htmlval = "<table ".$cssTableClass.">";
 
             $num_rows = count($table_rows);
 
-            print("hasHeader:".$hasHeader."<br>\n");
-            print("Count of rows:".$num_rows."<br>\n");
+            \Automad\Core\Debug::log($options['hasHeader'], "Value of hasHeader option");
+            \Automad\Core\Debug::log($options['rawText'], "Content of rawText option");
+            \Automad\Core\Debug::log($options['cssTableClass'], "Content of cssTableClass option");
+            \Automad\Core\Debug::log($options['cssTheadClass'], "Content of cssTheadClass option");
+            //print("hasHeader:".$hasHeader."<br>\n");
+            //print("Count of rows:".$num_rows."<br>\n");
 
 
             for ($table_row=0; $table_row < $num_rows; $table_row++){
@@ -54,7 +68,7 @@
 
                 /* if param hasHeader is true then create header  */
                 if ($hasHeader == true && $table_row == 0){
-                    $htmlval = $htmlval. "\n<thead>";
+                    $htmlval = $htmlval. "\n<thead".$cssTheadClass.">";
                 } elseif (($hasHeader == true && $table_row == 1) || $hasHeader == false && $table_row == 0) {
                     $htmlval = $htmlval. "\n<tbody>";
                 }
@@ -70,7 +84,7 @@
                     if($row_data[$table_cell] != "" || trim($row_data[$table_cell]) != " "){
                         if ($hasHeader == true && $table_row == 0) {
                             // header row
-                            $htmlval = $htmlval. "<th class='cols'>".$row_data[$table_cell]."</th>\n";
+                            $htmlval = $htmlval. "<th scope='cols'>".$row_data[$table_cell]."</th>\n";
                         } else {
                             // table data rows
                             $htmlval = $htmlval. "<td class='cols'>".$row_data[$table_cell]."</td>\n";
@@ -93,6 +107,7 @@
             //Close table
             $htmlval = $htmlval."</table>";
         }
+        \Automad\Core\Debug::log($htmlval, "Content of return variable (htmlval)");
         return $htmlval;
     }
 }
