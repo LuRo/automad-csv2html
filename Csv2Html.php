@@ -58,8 +58,6 @@
             \Automad\Core\Debug::log($options['rawText'], "Content of rawText option");
             \Automad\Core\Debug::log($options['cssTableClass'], "Content of cssTableClass option");
             \Automad\Core\Debug::log($options['cssTheadClass'], "Content of cssTheadClass option");
-            //print("hasHeader:".$hasHeader."<br>\n");
-            //print("Count of rows:".$num_rows."<br>\n");
 
 
             for ($table_row=0; $table_row < $num_rows; $table_row++){
