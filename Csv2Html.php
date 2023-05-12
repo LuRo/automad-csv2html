@@ -1,15 +1,16 @@
 <?php
 /**
- *	iSeek Csv to HTML
+ *	Csv to HTML table
  *
- * 	An Automad Csv to HTML convertion extension.
+ * 	An Automad Csv to HTML table convertion extension.
+ *  This version aims to support the bootstrap framework.
  *
  * 	@author Lukas Rothe
  * 	@copyright Copyright (C) 2023 Lukas Rothe - <https://iseek.ch> 
  * 	@license MIT license
  */
 
- namespace Iseek\Csv2Html;
+ namespace LuRo;
 
  defined('AUTOMAD') or die('Direct access not permitted!');
  
@@ -24,7 +25,7 @@
 	 * 	@return string the output of the extension
 	 */
 	
-	public function Csv2Html($options, $Automad) {
+	public function Csv2Html($Automad, $options) {
 
         $str_line_separator = "#";
         $str_cell_separator = ";";
